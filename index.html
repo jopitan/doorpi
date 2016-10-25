@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Remote Door</title>
+    <link rel="icon" href="images/door.ico?_=52952852858" type="image/x-icon"/>
+    <link rel="shortcut icon" href="images/door.ico?_=52952852858" type="image/x-icon"/>
+	<link rel="apple-touch-icon" href="images/door.ico?_=52952852858"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="style/font-awesome.css?_=52952852858">
+    <link rel="stylesheet" href="style/style.css?_=52952852858"/>
+</head>
+<body>
+<div class="container">
+    <div class="normal">
+        <span class="button">
+            <i class="fa fa-sign-in fa-lg valign" aria-hidden="true"></i>
+        </span>
+    </div>
+</div>
+<div class="footer">
+    <div class="space-down">
+        <a href="https://rysst.nl">
+            <img width="150px" src="images/logo.png">
+        </a>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/mobile.js"></script>
+<script type="text/javascript">
+    (function ($) {
+
+        var callUrl = 'call.php';
+		
+        function ajaxCall() {
+            $.get(callUrl);
+        }
+
+        $(function () {
+			$(".ui-loader").remove();
+		
+            $(".button")
+				.on('mousedown, tap', function () {
+					ajaxCall();
+				});
+        });
+    })(jQuery);
+</script>
+</body>
+</html>
